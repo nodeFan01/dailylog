@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<select id="sel">
+
+</select>
+<button onclick="showSelection()">||</button>
+<button onclick="selectItem()">S</button>
+
+<script type="text/javascript">
+    function $(id){return document.getElementById(id);}
+    var sel=$('sel');
+    sel.options.add(new Option("david",1));
+    sel.options.add(new Option("cheng",2));
+    sel.options.add(new Option("cjq",3));
+    function showSelection(){
+         window.alert(sel.options[sel.selectedIndex].value);
+    }
+    function selectItem(){
+         sel.selectedIndex=1;
+    }
+
+</script>
+</body>
+</html>

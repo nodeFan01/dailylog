@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
+<head>
+    <title>Daily Log</title>
+    <link rel="stylesheet" href="dailylog.css" type="text/css">
+</head>
+<body onload="loadPage()" onresize="pageResized()">
+<a href="/"><img class="logo" src="./images/homepage.png" title="Home Page" >
+</a><img src="./images/dailylog.png" class="logo">
+<img class="logo" src="./images/newlog.png" onclick="newLog()">
+<img class="logo" src="./images/filter.png" onclick="showHideFilterBar()">
+<span id="docTitle" class="docTitle"></span>
+<div id="filterbar">
+    From:<input id="filterFromDate" type="date" onchange="filter.setFilter('fromDate',this.value)">
+    <button title="previous day" onclick="filter.fromDateBackward()"><</button>
+    To:<input type="date" onchange="filter.setFilter('toDate',this.value)">
+    Orgs:<input id="filter_orgs" type="text" oninput="validateOrgInput(event)">
+    <select id="select_logtype_filter">
+        <option onclick="">Volume</option>
+    </select>
+    <select id="select_user">
+        <option>Myself</option>
+    </select>
+    <button onclick="queryDailyLog()">⊙</button>
+</div>
+<div id="logs">
+    <ul id="log_list">
+        <!--<li class="normal"><button>X</button><button>E</button>2013/3/1 18:30 DAVID Gas Volume This is a test</li>-->
+
+        <li><button onclick="newLog()">+</button></li>
+    </ul>
+
+</div>
+<div id="cover">
+
+</div>
+<div id="div_editor">
+    <span id="editorTitle"></span>
+    <select id="editorLogTypes">
+    </select>
+    Orgs:<input id="editor_orgs" type="text" oninput="validateOrgInput(event)">
+
+
+    <div id="attachment_droparea">
+        <div id="attachment_list"></div>
+
+            <!--<progress id="progressBar" value="0" max="100"></progress>-->
+            <!--<span id="percentage"></span>-->
+
+    </div>
+
+    <button id="div_editor_ok" onclick="editorOK()">X</button>
+
+    <textarea id="editorDesc"></textarea>
+
+</div>
+
+<!--<script type="text/javascript" src="./date_time.js"></script>-->
+<script type="text/javascript" src="../public_javascrips/date_time.js"></script>
+<script type="text/javascript" src="./dailylog_shared.js"></script>
+<script type="text/javascript" src="./dailylog_attachment.js"></script>
+<script type="text/javascript" src="./dailylog.js"></script>
+
+
+
+
+</body>
+</html>

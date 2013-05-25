@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
+<head>
+    <title>Sign In</title>
+    <style type="text/css">
+        *{
+            font-size: 12px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div>
+<h2>Sign In:</h2>
+
+<form action="/signin" method="post">
+
+    <table>
+        <tr>
+            <td>User Name:</td>
+            <td><input name="username" id="username" type="text"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td> <input name="password" id="password" type="password"> </td>
+        </tr>
+
+
+    </table>
+    <input type="submit" value="OK">
+
+</form>
+</div>
+<script type="text/javascript">
+    function checkPassword(){
+        var re_password=document.getElementById("re-password");
+        if(re_password.value!==document.getElementById("password").value){
+            re_password.style.backgroundColor='#ff0000';
+        }
+    }
+</script>
+
+</body>
+</html>
